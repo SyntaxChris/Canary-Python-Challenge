@@ -7,9 +7,11 @@ import os
 class FunctionalityTests:
     # define Ethernet runtest function
     def ethernet(self):
+        print "Attempting to connect..."
         if os.system("python -m unittest canary_test_suite.EthTest.test_connect_up") == 0:
+            print "Attempting to disconnect..."
             if os.system("python -m unittest canary_test_suite.EthTest.test_connect_down") == 0:
-                os.system("echo 'Ethernet Test Successful!'")
+                print "Ethernet Test Successful!"
 
     # define Wifi runtest function
 
