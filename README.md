@@ -1,7 +1,7 @@
 # README #
 
 
-### Inside the terminal run: ###
+### In the terminal run: ###
 ```
 python automate_tests.py
 ```
