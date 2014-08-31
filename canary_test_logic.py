@@ -12,7 +12,7 @@ def connect_up(syslog):
         if not line:
             syslog.seek(where)
         else:
-            if "{0}".format(time.strftime("%b %d %H:%M:%S")) in line:
+            if time.strftime("%b %d %H:%M:%S") in line:
                 if "NetworkManager state is now CONNECTED_GLOBAL" in line:
                     return True
                     break
@@ -25,7 +25,7 @@ def connect_down(syslog):
         if not line:
             syslog.seek(where)
         else:
-            if "{0}".format(time.strftime("%b %d %H:%M:%S")) in line:
+            if time.strftime("%b %d %H:%M:%S") in line:
                 if "NetworkManager state is now DISCONNECTED" in line:
                     return True
                     break
