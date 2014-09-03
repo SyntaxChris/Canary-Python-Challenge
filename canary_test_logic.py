@@ -36,16 +36,14 @@ def connect_down(syslog):
                     break
 
 if __name__ == "__main__":
-    run_tests = raw_input("This is the test logic file. Run automated tests instead? (y/n) ")
     while 1:
+      run_tests = raw_input("This is the test logic file. Run automated tests instead? (y/n) ")
       if run_tests == 'y':
         execfile('automate_tests.py')
         break
       elif run_tests == 'n':
         sys.exit()
         break
-      else:
-        run_tests = raw_input("please choose: y or n ")
 
 #=== OUTLINE ===
 
