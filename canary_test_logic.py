@@ -1,14 +1,14 @@
 #!/usr/bin/python
 import subprocess, sys, time
-# Ethernet connect test: Could check additional connection logs and implement counter
-# once counter reaches desired number of checks, return true
+
 def time_now():
   if time.strftime("%d")[0] == '0':
     day = time.strftime("%d")[1]
     return time.strftime("%b  {0} %H:%M:%S".format(day))
   else:
     return time.strftime("%b %d %H:%M:%S")
-
+# Ethernet connect test: Could check additional connection logs and implement counter
+# once counter reaches desired number of log checks, return true
 def connect_up(syslog):
     subprocess.call("sudo ifconfig eth0 up", shell=True)
     while 1:
@@ -54,6 +54,12 @@ if __name__ == "__main__":
     # check syslog for keyword "ath0"
     # test functionality with mobile app
 
+#SSH/Serial Console Tests
+    # check for connection log on port assigned to SSH ex: "connection from 128.11.22.33 port 1022"
+    # search for logs with 'RSA', 'SSH1', 'SSH2', 'OpenSSH'
+    # varify in logs that RSA key generation complete
+    # send data via SSH to test functionality
+
 # Camera Tests
     # activate port where camera is assigned to
     # check for video logs on assigned port
@@ -79,6 +85,7 @@ if __name__ == "__main__":
     # make GET and POST requests to server via httplib
     # monitor and GET and POST requests in syslog
     # confirm in log that requests made from mobile app are present
+    # confirm that Canary is communicating with app by monitoring server and checking database for changes
 
 # Infrared LED Tests
     # activate port that LEDs are assigned to

@@ -1,6 +1,5 @@
 #!/usr/bin/python
 import unittest
-
 from canary_test_logic import connect_up, connect_down #import additional test logic functions
 # Ethernet Tests
 class EthTest(unittest.TestCase):
@@ -12,7 +11,14 @@ class EthTest(unittest.TestCase):
           self.assertEquals(connect_down(f), True)
 
 if __name__ == "__main__":
-    print "This is the unittest file. Run automate_tests.py"
+    while 1:
+        run_tests = raw_input("This is the test suite. Run automated tests? (y/n) ")
+        if run_tests == 'y':
+            execfile('automate_tests.py')
+            break
+        elif run_tests == 'n':
+            sys.exit()
+            break
 
 # === Additional Classes ===
 # class WifiTests
@@ -25,6 +31,3 @@ if __name__ == "__main__":
 # class RGBLEDTests
 # class SirenTests
 # class SpeakerTests
-
-if __name__ == '__main__':
-    unittest.main()
