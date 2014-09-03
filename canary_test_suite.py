@@ -1,31 +1,30 @@
 #!/usr/bin/python
-
 import unittest
-from canary_test_logic import connect_up, connect_down #import additional test logic functions
 
+from canary_test_logic import connect_up, connect_down #import additional test logic functions
 # Ethernet Tests
 class EthTest(unittest.TestCase):
-
     def test_connect_up(self):
-        file = open('/var/log/syslog')
-        self.assertEquals(connect_up(file), True)
-
-
+        with open('/var/log/syslog') as f:
+          self.assertEquals(connect_up(f), True)
     def test_connect_down(self):
-        file = open('/var/log/syslog')
-        self.assertEquals(connect_down(file), True)
+        with open('/var/log/syslog') as f:
+          self.assertEquals(connect_down(f), True)
+
+if __name__ == "__main__":
+    print "This is the unittest file. Run automate_tests.py"
 
 # === Additional Classes ===
-# WifiTests
-# CameraTests
-# MicrophoneTests
-# AmbientLightTests
-# RealTimeStreamingProtocolTests
-# HTTPLiveStreamingTests
-# InfraredLEDTests
-# RGBLEDTests
-# SirenTests
-# SpeakerTests
+# class WifiTests
+# class CameraTests
+# class MicrophoneTests
+# class AmbientLightTests
+# class RealTimeStreamingProtocolTests
+# class HTTPLiveStreamingTests
+# class InfraredLEDTests
+# class RGBLEDTests
+# class SirenTests
+# class SpeakerTests
 
 if __name__ == '__main__':
     unittest.main()
