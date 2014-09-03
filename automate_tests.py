@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import os
 # This is where all tests can be automated
 # Once usb port that Canary hooks up too has a reading this file can be executed
 class FunctionalityTests:
